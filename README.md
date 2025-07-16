@@ -55,14 +55,14 @@ rad deploy .env/dev.bicep --parameters tenantId=$ARM_TENANT_ID \
  --parameters clientId=$ARM_CLIENT_ID \
  --parameters clientSecret=$ARM_CLIENT_SECRET \
  --parameters subscriptionId=$ARM_SUBSCRIPTION_ID \
- --parameters resourceGroupName=$RESOURCE_GROUP
+ --parameters resourceGroupName=$RESOURCE_GROUP \
+ --parameters location=$LOCATION
 ```
 
 **Step 6** - Deploy app
 
 ```bash
-rad deploy app.bicep -e dev \
-   --parameters location=$LOCATION   
+rad deploy app.bicep -e dev 
 ```
 
 ---

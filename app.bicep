@@ -7,16 +7,12 @@ param application string
 @description('The Radius Environment ID. Injected automatically by the rad CLI.')
 param environment string
 
-@description('Azure region for resources')
-param location string = 'uksouth'
-
 // Storage account using Terraform recipe
 resource storage 'Radius.Resources/azStorageAccount@2023-10-01-preview' = {
   name: 'terraform-storage-account'
   properties: {  
     environment: environment
-    application: application    
-    location: location
+    application: application
   }
 }
     

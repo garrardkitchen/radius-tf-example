@@ -20,7 +20,7 @@ param subscriptionId string
 param resourceGroupName string
 
 @description('Azure region')
-param location string = 'uksouth'
+param location string
 
 // Step 1: Define a secretStore resource for Azure credentials
 resource azureSecretStore 'Applications.Core/secretStores@2023-10-01-preview' = {
