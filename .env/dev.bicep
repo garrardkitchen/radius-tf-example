@@ -16,11 +16,8 @@ param clientSecret string
 @secure()
 param subscriptionId string
 
-@description('Azure resource group name')
-param resourceGroupName string
-
 @description('Azure region')
-param location string
+param location string = resourceGroup().location
 
 // Step 1: Define a secretStore resource for Azure credentials
 resource azureSecretStore 'Applications.Core/secretStores@2023-10-01-preview' = {
@@ -54,7 +51,7 @@ resource environment 'Applications.Core/environments@2023-10-01-preview' = {
     }
     providers: {
       azure: {
-        scope: '/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}'
+        scope: '/subscriptions/${subscriptionId}/resourceGroups/${resourceGroup().name}'
       }
     }
     recipeConfig: {
@@ -87,7 +84,7 @@ resource environment 'Applications.Core/environments@2023-10-01-preview' = {
       }
       env: {
         AZURE_LOCATION: location
-        AZURE_RESOURCE_GROUP: resourceGroupName
+        AZURE_RESOURCE_GROUP: resourceGroup().name
       }
     }
     recipes: {
