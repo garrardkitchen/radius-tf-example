@@ -62,11 +62,8 @@ rad deploy .env/dev.bicep --parameters tenantId=$ARM_TENANT_ID \
 
 ```bash
 rad deploy app.bicep -e dev \
-   --parameters resourceGroupName=$RESOURCE_GROUP \
-   --parameters location=$LOCATION \
-   --parameters storageAccountName=$STORAGE_ACCOUNT_NAME
+   --parameters location=$LOCATION   
 ```
-
 
 ---
 

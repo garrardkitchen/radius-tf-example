@@ -94,10 +94,7 @@ resource environment 'Applications.Core/environments@2023-10-01-preview' = {
       'Radius.Resources/azStorageAccount': {
         default: {
           parameters: {
-            // resource_group_name: '<replace with your resource group name>'
             location: location
-            // storage_account_name: '<replace with your storage account name>'
-            tag: 'dev'
           }
           templateKind: 'terraform'
           // Recipe template path

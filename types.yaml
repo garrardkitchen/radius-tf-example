@@ -11,15 +11,8 @@ types:
               type: string
             application:
               type: string
-            resource_group_name: 
-              type: string
-            storage_account_name: 
-              type: string
             location: 
               type: string
-            tag: 
-              description: "Environment tag for the storage account"
-              type: string
-
+           
 
            
